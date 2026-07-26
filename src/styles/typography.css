@@ -1,123 +1,364 @@
 @plugin "@tailwindcss/typography";
 
 @layer base {
-  /* ===== Override default Tailwind Typography styles ===== */
-  .app-prose {
-    @apply prose;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    th {
-      @apply text-foreground mb-3;
+  /* =====================================================
+     Querywala Article Styling
+     ===================================================== */
+
+  .app-prose {
+
+    @apply prose prose-lg max-w-none text-foreground;
+
+    /* Typography */
+
+    h1 {
+
+      @apply text-5xl md:text-6xl font-black tracking-tight leading-tight text-foreground;
+
+      margin-top: 0;
+
+      margin-bottom: 2rem;
+
+    }
+
+    h2 {
+
+      @apply text-4xl font-bold tracking-tight text-foreground;
+
+      margin-top: 4rem;
+
+      margin-bottom: 1.5rem;
+
+      padding-bottom: .75rem;
+
+      border-bottom: 1px solid var(--color-border);
+
     }
 
     h3 {
-      @apply italic;
+
+      @apply text-3xl font-semibold text-foreground;
+
+      margin-top: 3rem;
+
+      margin-bottom: 1rem;
+
     }
 
-    p,
-    strong,
-    ol,
-    ul,
-    figcaption,
-    table,
-    code {
-      @apply text-foreground;
+    h4 {
+
+      @apply text-2xl font-semibold text-foreground;
+
+      margin-top: 2rem;
+
+      margin-bottom: .75rem;
+
+    }
+
+    p {
+
+      @apply text-lg leading-9 text-foreground;
+
+      margin: 1.5rem 0;
+
+    }
+
+    strong {
+
+      @apply font-semibold text-foreground;
+
     }
 
     a {
-      @apply text-foreground hover:text-accent wrap-break-word decoration-dashed underline-offset-4 focus-visible:no-underline;
+
+      color: var(--color-accent);
+
+      text-decoration: none;
+
+      font-weight: 500;
+
+      transition: .2s;
+
     }
 
-    ul {
-      @apply overflow-x-clip;
+    a:hover {
+
+      text-decoration: underline;
+
+      text-underline-offset: 4px;
+
+    }
+
+    ul,
+    ol {
+
+      @apply text-lg leading-9;
+
+      margin: 1.5rem 0;
+
+      padding-left: 1.5rem;
+
     }
 
     li {
-      @apply marker:text-accent;
+
+      margin: .6rem 0;
+
+    }
+
+    li::marker {
+
+      color: var(--color-accent);
+
     }
 
     hr {
-      @apply border-border;
+
+      border: none;
+
+      height: 1px;
+
+      background: var(--color-border);
+
+      margin: 4rem 0;
+
     }
+
+    /* Images */
 
     img {
-      @apply border-border mx-auto border;
-    }
 
-    img[role="button"] {
-      @apply cursor-zoom-in;
+      display: block;
 
-      &:focus-visible {
-        @apply outline-2 outline-offset-2 outline-dashed;
-      }
+      width: 100%;
+
+      border-radius: 18px;
+
+      border: 1px solid var(--color-border);
+
+      margin: 3rem auto;
+
+      box-shadow: var(--shadow-card);
+
     }
 
     figcaption {
-      @apply opacity-75;
+
+      text-align: center;
+
+      font-size: .9rem;
+
+      color: var(--color-muted);
+
+      margin-top: .75rem;
+
     }
 
-    table {
-      th,
-      td {
-        @apply border-border border p-2;
-      }
+    /* Blockquotes */
 
-      th {
-        @apply py-1.5;
-      }
+    blockquote {
+
+      margin: 2.5rem 0;
+
+      padding: 1.5rem 2rem;
+
+      border-left: 5px solid var(--color-accent);
+
+      background: var(--color-surface);
+
+      border-radius: 12px;
+
+      font-style: normal;
+
     }
+
+    blockquote p {
+
+      margin: 0;
+
+    }
+
+    /* Inline Code */
 
     code {
-      @apply bg-muted/75 text-foreground rounded p-1 wrap-break-word before:content-none after:content-none;
+
+      background: var(--color-surface);
+
+      border: 1px solid var(--color-border);
+
+      border-radius: 6px;
+
+      padding: .2rem .45rem;
+
+      font-size: .95rem;
+
+      color: var(--color-accent);
+
+    }
+
+    /* Code Blocks */
+
+    pre {
+
+      margin: 2rem 0;
+
+      border-radius: 18px;
+
+      border: 1px solid var(--color-border);
+
+      overflow: auto;
+
+      padding: 1rem;
+
+      box-shadow: var(--shadow-card);
+
+    }
+
+    .astro-code {
+
+      border-radius: 18px;
+
+      background: var(--shiki-light-bg);
+
+      color: var(--shiki-light);
+
+    }
+
+    html[data-theme="dark"] .astro-code {
+
+      background: var(--shiki-dark-bg);
+
+      color: var(--shiki-dark);
+
     }
 
     .astro-code code {
-      @apply flex-[1_0_100%] bg-inherit p-0;
+
+      background: transparent;
+
+      border: none;
+
+      padding: 0;
+
+      color: inherit;
+
     }
 
-    blockquote {
-      @apply border-s-accent/80 wrap-break-word opacity-80;
+    /* Tables */
+
+    table {
+
+      width: 100%;
+
+      border-collapse: collapse;
+
+      margin: 2rem 0;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      box-shadow: var(--shadow-card);
+
     }
 
-    details:not(.callout) {
-      @apply text-foreground inline-block cursor-pointer select-none [&_p]:hidden [&_ul]:my-0!;
+    thead {
+
+      background: var(--color-surface);
+
+    }
+
+    th {
+
+      text-align: left;
+
+      padding: 1rem;
+
+      font-weight: 700;
+
+      border-bottom: 1px solid var(--color-border);
+
+    }
+
+    td {
+
+      padding: 1rem;
+
+      border-bottom: 1px solid var(--color-border);
+
+    }
+
+    tr:last-child td {
+
+      border-bottom: none;
+
+    }
+
+    /* Details */
+
+    details {
+
+      margin: 2rem 0;
+
+      border: 1px solid var(--color-border);
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
     }
 
     summary {
-      @apply focus-visible:outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-dashed;
+
+      cursor: pointer;
+
+      padding: 1rem 1.25rem;
+
+      background: var(--color-surface);
+
+      font-weight: 600;
+
     }
 
-    pre {
-      @apply focus-visible:outline-accent focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-dashed;
+    details > div {
+
+      padding: 1rem 1.25rem;
+
     }
+
   }
 
-  /* ===== Code Blocks & Syntax Highlighting ===== */
+  /* =====================================================
+     Syntax Highlighting
+     ===================================================== */
+
   .astro-code {
-    @apply outline-border flex border bg-(--shiki-light-bg) text-(--shiki-light) [&_span]:text-(--shiki-light);
+
+    overflow-x: auto;
+
   }
 
-  html[data-theme="dark"] .astro-code {
-    @apply bg-(--shiki-dark-bg) text-(--shiki-dark) [&_span]:text-(--shiki-dark);
+  .astro-code .line {
+
+    padding: 0 .5rem;
+
   }
 
-  /* Styles for Shiki transformers */
-  /* https://shiki.style/packages/transformers */
-  .astro-code {
-    .line.diff.add {
-      @apply relative inline-block w-full bg-green-400/20 before:absolute before:-left-3 before:text-green-500 before:content-['+'];
-    }
-    .line.diff.remove {
-      @apply relative inline-block w-full bg-red-500/20 before:absolute before:-left-3 before:text-red-500 before:content-['-'];
-    }
-    .line.highlighted {
-      @apply inline-block w-full bg-slate-400/20;
-    }
-    .highlighted-word {
-      @apply border-border rounded-sm border px-0.5 py-px;
-    }
+  .astro-code .line.highlighted {
+
+    background: rgba(59,130,246,.12);
+
   }
+
+  .astro-code .highlighted-word {
+
+    border-radius: 4px;
+
+    background: rgba(59,130,246,.15);
+
+    padding: 2px 4px;
+
+  }
+
 }
