@@ -1,0 +1,92 @@
+---
+import LinkButton from "@/components/LinkButton.astro";
+---
+
+<section class="mx-auto max-w-7xl border-t border-border px-6 py-24">
+
+  <div class="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+
+    <!-- Left -->
+
+    <div>
+
+      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
+        About Querywala
+      </p>
+
+      <h2 class="mt-3 text-4xl font-black tracking-tight">
+        Practical knowledge from real-world implementations.
+      </h2>
+
+      <p class="mt-8 text-lg leading-9 text-muted">
+        Querywala is a technical publication dedicated to Microsoft Fabric,
+        Azure, SQL, Power BI, AI, and Enterprise Data Engineering.
+      </p>
+
+      <p class="mt-6 text-lg leading-9 text-muted">
+        Every guide is based on practical experience building production
+        data platforms, implementing analytics solutions, and solving
+        real engineering challenges—not just sample projects.
+      </p>
+
+      <p class="mt-6 text-lg leading-9 text-muted">
+        The goal is simple: publish high-quality, implementation-focused
+        articles that help engineers, analysts, architects, and developers
+        build better data solutions.
+      </p>
+
+      <div class="mt-10">
+        <LinkButton href="/about">
+          Learn More About Querywala
+        </LinkButton>
+      </div>
+
+    </div>
+
+    <!-- Right -->
+
+    <div class="rounded-3xl border border-border bg-surface p-8">
+
+      <h3 class="text-2xl font-bold">
+        What you'll find here
+      </h3>
+
+      <ul class="mt-8 space-y-5">
+
+        <li class="flex gap-4">
+          <span class="text-accent text-xl">✓</span>
+          <span>Production-ready Microsoft Fabric tutorials</span>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-accent text-xl">✓</span>
+          <span>Architecture and implementation guides</span>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-accent text-xl">✓</span>
+          <span>Power BI and SQL best practices</span>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-accent text-xl">✓</span>
+          <span>Performance tuning and troubleshooting</span>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-accent text-xl">✓</span>
+          <span>Governance, security and enterprise patterns</span>
+        </li>
+
+        <li class="flex gap-4">
+          <span class="text-accent text-xl">✓</span>
+          <span>Automation, AI and modern data engineering</span>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>

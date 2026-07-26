@@ -1,0 +1,59 @@
+---
+import Socials from "@/components/Socials.astro";
+import config from "@/config";
+
+const { socials } = config;
+---
+
+<section class="border-t border-border">
+  <div class="mx-auto max-w-5xl px-6 py-24 text-center">
+
+    <p class="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
+      Let's Connect
+    </p>
+
+    <h2 class="mt-4 text-5xl font-black tracking-tight">
+      Continue the conversation.
+    </h2>
+
+    <p class="mx-auto mt-8 max-w-3xl text-xl leading-9 text-muted">
+      If you enjoy practical Microsoft Fabric, Azure, SQL and Power BI
+      content, follow Querywala for new tutorials, implementation guides,
+      architecture articles and engineering best practices.
+    </p>
+
+    {
+      socials.length > 0 && (
+        <div class="mt-12 flex justify-center">
+          <Socials />
+        </div>
+      )
+    }
+
+    <div class="mt-14 grid gap-6 md:grid-cols-3">
+
+      <div class="rounded-2xl border border-border bg-surface p-6">
+        <h3 class="text-lg font-bold">Weekly Articles</h3>
+        <p class="mt-3 text-muted">
+          New tutorials and implementation guides.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-border bg-surface p-6">
+        <h3 class="text-lg font-bold">Open Source</h3>
+        <p class="mt-3 text-muted">
+          Sample code, scripts and reusable solutions.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-border bg-surface p-6">
+        <h3 class="text-lg font-bold">Community</h3>
+        <p class="mt-3 text-muted">
+          Learn, share knowledge and grow together.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>

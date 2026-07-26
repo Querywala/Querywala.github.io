@@ -1,0 +1,138 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import LinkButton from "@/components/LinkButton.astro";
+import Socials from "@/components/Socials.astro";
+import config from "@/config";
+
+const locale = Astro.currentLocale ?? config.site.lang;
+const { socials } = config;
+
+const technologies = [
+  "Microsoft Fabric",
+  "Azure",
+  "Power BI",
+  "SQL",
+  "Python",
+  "AI",
+];
+---
+
+<section class="mx-auto max-w-7xl px-6 py-24">
+
+  <div class="grid gap-16 lg:grid-cols-[1.4fr_0.8fr] lg:items-center">
+
+    <!-- Left -->
+
+    <div>
+
+      <p class="mb-6 text-sm font-semibold uppercase tracking-[0.25em] text-accent">
+        Enterprise Data Engineering • Analytics • Cloud
+      </p>
+
+      <h1 class="max-w-4xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
+        Turning data
+        <br />
+        into insights,
+        <br />
+        one query
+        <br />
+        at a time.
+      </h1>
+
+      <p class="mt-8 max-w-2xl text-xl leading-9 text-muted">
+        Querywala is a technical publication focused on
+        Microsoft Fabric, Azure, SQL, Power BI, AI and
+        Enterprise Data Engineering.
+        Every article is based on practical implementation,
+        architecture patterns and production experience.
+      </p>
+
+      <div class="mt-10 flex flex-wrap gap-4">
+
+        <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
+          Read Articles
+        </LinkButton>
+
+        <LinkButton
+          href="/about"
+          class="border border-border bg-transparent"
+        >
+          About Me
+        </LinkButton>
+
+      </div>
+
+      {
+        socials.length > 0 && (
+          <div class="mt-10">
+            <Socials />
+          </div>
+        )
+      }
+
+    </div>
+
+    <!-- Right -->
+
+    <div class="rounded-3xl border border-border bg-surface p-8">
+
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+        Technologies
+      </p>
+
+      <div class="mt-6 flex flex-wrap gap-3">
+
+        {
+          technologies.map((tech) => (
+            <span
+              class="rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-sm font-medium text-accent"
+            >
+              {tech}
+            </span>
+          ))
+        }
+
+      </div>
+
+      <div class="mt-10 space-y-6">
+
+        <div class="rounded-xl border border-border p-5">
+          <p class="text-sm font-semibold text-foreground">
+            Production-ready Guides
+          </p>
+
+          <p class="mt-2 text-sm text-muted">
+            Step-by-step tutorials built from real-world
+            enterprise implementations.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-border p-5">
+          <p class="text-sm font-semibold text-foreground">
+            Architecture & Best Practices
+          </p>
+
+          <p class="mt-2 text-sm text-muted">
+            Design patterns, governance, performance tuning,
+            and implementation guidance.
+          </p>
+        </div>
+
+        <div class="rounded-xl border border-border p-5">
+          <p class="text-sm font-semibold text-foreground">
+            Microsoft Fabric Focus
+          </p>
+
+          <p class="mt-2 text-sm text-muted">
+            Lakehouse, Data Warehouse, OneLake,
+            Spark, Power BI and the complete Fabric ecosystem.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

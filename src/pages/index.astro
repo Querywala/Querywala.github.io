@@ -6,16 +6,17 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 
-import Card from "@/components/Card.astro";
-import LinkButton from "@/components/LinkButton.astro";
-import Socials from "@/components/Socials.astro";
-
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import Hero from "@/components/home/Hero.astro";
+import FeaturedGuide from "@/components/home/FeaturedGuide.astro";
+import LatestArticles from "@/components/home/LatestArticles.astro";
+import Topics from "@/components/home/Topics.astro";
+import AboutQuerywala from "@/components/home/AboutQuerywala.astro";
+import FollowSection from "@/components/home/FollowSection.astro";
 
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import config from "@/config";
 
-const { socials, posts: postsConfig } = config;
+const { posts: postsConfig } = config;
 
 const locale = Astro.currentLocale ?? config.site.lang;
 
@@ -36,240 +37,51 @@ const homePath = getRelativeLocaleUrl(locale, "");
 
 <Layout>
 
-<Header />
+  <Header />
 
-<main
-  id="main-content"
-  data-layout="index"
-  data-home-path={homePath}
->
+  <main
+    id="main-content"
+    data-layout="index"
+    data-home-path={homePath}
+  >
 
-  <!-- HERO -->
+    <Hero />
 
-  <section class="mx-auto max-w-7xl px-6 py-20">
+    <FeaturedGuide
+      posts={featuredPosts}
+    />
 
-    <div class="max-w-4xl">
+    <LatestArticles
+      posts={latestPosts.slice(0, postsConfig.perIndex)}
+    />
 
-      <p class="mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-accent">
-        Microsoft Fabric • Azure • SQL • Power BI • AI
-      </p>
+    <Topics />
 
-      <h1 class="text-6xl font-black leading-tight tracking-tight">
+    <AboutQuerywala />
 
-        Turning data into insights, one query at a time.
+    <FollowSection />
 
-      </h1>
+  </main>
 
-      <p class="mt-8 max-w-3xl text-xl leading-9 opacity-80">
-
-        Enterprise-ready tutorials,
-        architecture guides,
-        real-world implementations,
-        and deep technical articles covering
-        Microsoft Fabric,
-        Azure,
-        SQL,
-        Power BI,
-        AI,
-        Data Engineering,
-        and Analytics.
-
-      </p>
-
-      <div class="mt-10 flex flex-wrap gap-4">
-
-        <LinkButton
-          href={getRelativeLocaleUrl(locale,"posts")}
-        >
-
-          Read Articles
-
-        </LinkButton>
-
-        <LinkButton
-          href="/about"
-          class="border border-border"
-
-        >
-          About Me
-        </LinkButton>
-
-      </div>
-
-      {
-        socials.length > 0 && (
-
-          <div class="mt-12">
-
-            <Socials />
-
-          </div>
-
-        )
-      }
-
-    </div>
-
-  </section>
-    <!-- FEATURED GUIDE -->
-
-  {
-    featuredPosts.length > 0 && (
-      <section class="mx-auto max-w-7xl border-t border-border px-6 py-20">
-
-        <div class="mb-10 flex items-center justify-between">
-
-          <div>
-
-            <p class="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
-              Featured
-            </p>
-
-            <h2 class="mt-2 text-4xl font-bold">
-              Featured Guide
-            </h2>
-
-          </div>
-
-        </div>
-
-        <ul class="space-y-8">
-          {featuredPosts.map(post => (
-            <Card variant="h2" {...post} />
-          ))}
-        </ul>
-
-      </section>
-    )
-  }
-
-  <!-- LATEST ARTICLES -->
-
-  {
-    latestPosts.length > 0 && (
-      <section class="mx-auto max-w-7xl border-t border-border px-6 py-20">
-
-        <div class="mb-10">
-
-          <p class="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
-            Latest
-          </p>
-
-          <h2 class="mt-2 text-4xl font-bold">
-            Latest Articles
-          </h2>
-
-        </div>
-
-        <ul class="grid gap-8">
-
-          {latestPosts
-            .slice(0, postsConfig.perIndex)
-            .map(post => (
-              <Card
-                variant="h3"
-                {...post}
-              />
-            ))}
-
-        </ul>
-
-      </section>
-    )
-  }
-
-  <!-- BROWSE ALL -->
-
-  <section class="mx-auto max-w-7xl px-6 pb-20">
-
-    <div class="rounded-3xl border border-border bg-muted/40 p-10 text-center">
-
-      <h2 class="text-3xl font-bold">
-        Explore the complete knowledge base
-      </h2>
-
-      <p class="mx-auto mt-4 max-w-2xl text-lg opacity-80">
-        Browse all tutorials, implementation guides,
-        architecture articles and practical solutions covering
-        Microsoft Fabric, Azure, SQL, Power BI and AI.
-      </p>
-
-      <div class="mt-8">
-
-        <LinkButton
-          href={getRelativeLocaleUrl(locale, "posts")}
-        >
-
-          Browse All Articles
-
-          <IconArrowRight
-            class="ml-2 inline-block"
-          />
-
-        </LinkButton>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- NEWSLETTER / FOLLOW -->
-
-  <section class="mx-auto max-w-7xl border-t border-border px-6 py-20">
-
-    <div class="mx-auto max-w-3xl text-center">
-
-      <p class="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
-        Stay Updated
-      </p>
-
-      <h2 class="mt-4 text-4xl font-bold">
-        Follow Querywala
-      </h2>
-
-      <p class="mt-6 text-lg leading-8 opacity-80">
-        New Microsoft Fabric tutorials,
-        Azure articles,
-        SQL tips,
-        Power BI best practices,
-        and AI implementation guides are published regularly.
-      </p>
-
-      {
-        socials.length > 0 && (
-          <div class="mt-10 flex justify-center">
-            <Socials />
-          </div>
-        )
-      }
-
-    </div>
-
-  </section>
-
-</main>
-
-<Footer />
+  <Footer />
 
 </Layout>
 
 <script>
 document.addEventListener("astro:page-load", () => {
-
-  const indexLayout = document.querySelector("#main-content") as HTMLElement | null;
+  const indexLayout = document.querySelector("#main-content");
 
   const baseRoot =
     import.meta.env.BASE_URL.replace(/\/?$/, "/");
 
-  if (indexLayout?.dataset.layout) {
-
+  if (
+    indexLayout instanceof HTMLElement &&
+    indexLayout.dataset.layout
+  ) {
     sessionStorage.setItem(
       "backUrl",
       indexLayout.dataset.homePath ?? baseRoot
     );
-
   }
-
 });
 </script>
