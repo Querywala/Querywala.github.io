@@ -39,11 +39,11 @@ export default defineAstroPaperConfig({
     },
     {
       name: "linkedin",
-      url: "YOUR_LINKEDIN_URL",
+      url: "https://ae.linkedin.com/in/abhi-gautam-data",
     },
     {
       name: "mail",
-      url: "mailto:YOUR_EMAIL",
+      url: "mailto:ization.in@gmail.com",
     },
   ],
 
