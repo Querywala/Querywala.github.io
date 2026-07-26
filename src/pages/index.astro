@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
-import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
@@ -27,65 +26,88 @@ const homePath = getRelativeLocaleUrl(locale, "");
 
 <Layout>
   <Header />
+
   <main
     id="main-content"
     data-layout="index"
     data-home-path={homePath}
     class="app-layout"
   >
-   <section id="hero" class="border-border border-b py-12">
-  <div class="max-w-4xl">
-    <p class="text-sm uppercase tracking-[0.3em] text-accent font-semibold">
-      QUERYWALA
-    </p>
+    <!-- Hero -->
+    <section id="hero" class="border-border border-b py-12">
+      <div class="max-w-4xl">
 
-    <h1 class="mt-4 text-5xl font-bold leading-tight sm:text-6xl">
-      Turning data into insights,
-      <br />
-      one query at a time.
-    </h1>
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">
+          QUERYWALA
+        </p>
 
-    <p class="mt-6 max-w-3xl text-lg text-muted-foreground leading-8">
-  Practical articles, tutorials, and real-world solutions covering
-  <strong> Microsoft Fabric</strong>,
-  <strong> Azure</strong>,
-  <strong> SQL</strong>,
-  <strong> Power BI</strong>,
-  <strong> Data Engineering</strong>, and
-  <strong> AI</strong>.
-</p>
+        <h1 class="mt-4 text-5xl font-bold leading-tight sm:text-6xl">
+          Turning data into insights,
+          <br />
+          one query at a time.
+        </h1>
 
-    <div class="mt-8 flex flex-wrap gap-3">
-      <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
-        Read Articles
-      </LinkButton>
+        <p class="mt-6 max-w-3xl text-lg leading-8 opacity-80">
+          Practical articles, tutorials, and real-world solutions covering
+          <strong>Microsoft Fabric</strong>,
+          <strong>Azure</strong>,
+          <strong>SQL</strong>,
+          <strong>Power BI</strong>,
+          <strong>Data Engineering</strong>, and
+          <strong>AI</strong>.
+        </p>
 
-      <LinkButton
-        href="/about"
-        class="border border-border px-4 py-2 rounded-lg hover:bg-muted"
-      >
-        About Me
-      </LinkButton>
-    </div>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
+            Read Articles
+          </LinkButton>
 
-    <div class="mt-8 flex flex-wrap gap-2 text-sm">
-      <span class="rounded-full border px-3 py-1">Microsoft Fabric</span>
-      <span class="rounded-full border px-3 py-1">Azure</span>
-      <span class="rounded-full border px-3 py-1">SQL</span>
-      <span class="rounded-full border px-3 py-1">Power BI</span>
-      <span class="rounded-full border px-3 py-1">AI</span>
-      <span class="rounded-full border px-3 py-1">Data Engineering</span>
-    </div>
-
-    {
-      socials.length > 0 && (
-        <div class="mt-8">
-          <Socials />
+          <LinkButton
+            href="/about"
+            class="rounded-lg border border-border px-4 py-2 hover:bg-muted"
+          >
+            About Me
+          </LinkButton>
         </div>
-      )
-    }
-  </div>
-</section>
+
+        <div class="mt-8 flex flex-wrap gap-2 text-sm">
+          <span class="rounded-full border px-3 py-1">
+            Microsoft Fabric
+          </span>
+
+          <span class="rounded-full border px-3 py-1">
+            Azure
+          </span>
+
+          <span class="rounded-full border px-3 py-1">
+            SQL
+          </span>
+
+          <span class="rounded-full border px-3 py-1">
+            Power BI
+          </span>
+
+          <span class="rounded-full border px-3 py-1">
+            AI
+          </span>
+
+          <span class="rounded-full border px-3 py-1">
+            Data Engineering
+          </span>
+        </div>
+
+        {
+          socials.length > 0 && (
+            <div class="mt-8">
+              <Socials />
+            </div>
+          )
+        }
+
+      </div>
+    </section>
+
+    <!-- Featured -->
 
     {
       featuredPosts.length > 0 && (
@@ -96,48 +118,54 @@ const homePath = getRelativeLocaleUrl(locale, "");
             { "border-border border-b": recentPosts.length > 0 },
           ]}
         >
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.featured}
+          <h2 class="mb-6 text-3xl font-bold">
+            Featured Guides
           </h2>
+
           <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
+            {featuredPosts.map(post => (
+              <Card variant="h3" {...post} />
             ))}
           </ul>
         </section>
       )
     }
+
+    <!-- Latest -->
 
     {
       recentPosts.length > 0 && (
         <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.recentPosts}
+          <h2 class="mb-6 text-3xl font-bold">
+            Latest Articles
           </h2>
+
           <ul>
-            {recentPosts.slice(0, postsConfig.perIndex).map(data => (
-              <Card variant="h3" {...data} />
+            {recentPosts.slice(0, postsConfig.perIndex).map(post => (
+              <Card variant="h3" {...post} />
             ))}
           </ul>
         </section>
       )
     }
 
-    <div class="my-8 text-center">
+    <div class="my-10 text-center">
       <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
-        {t.home.allPosts}
+        Browse All Articles
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
     </div>
+
   </main>
+
   <Footer />
 </Layout>
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
-      ?.dataset;
+    const indexLayout = document.querySelector("#main-content")?.dataset;
     const baseRoot = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+
     if (indexLayout?.layout) {
       sessionStorage.setItem("backUrl", indexLayout.homePath ?? baseRoot);
     }
