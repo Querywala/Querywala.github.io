@@ -40,10 +40,8 @@ const isActive = (path: string) => {
   {t.a11y.skipToContent}
 </a>
 
-<header class="app-layout">
-  <div
-    class="border-border bg-background flex w-full items-center justify-between border-b py-5"
-  >
+<header class="sticky top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur">
+  <div class="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6">
     <!-- Logo -->
     <a
       href={getRelativeLocaleUrl(locale, "")}
@@ -52,10 +50,10 @@ const isActive = (path: string) => {
       <img
         src={QuerywalaLogo.src}
         alt="Querywala"
-        class="h-14 w-14 rounded-xl"
+        class="h-16 w-16 object-contain"
       />
 
-      <span class="hidden sm:block text-3xl font-extrabold tracking-tight">
+      <span class="hidden md:block text-2xl font-bold tracking-tight">
         Querywala
       </span>
     </a>
@@ -80,7 +78,7 @@ const isActive = (path: string) => {
 
       <ul
         id="menu-items"
-        class="mt-4 hidden w-44 grid-cols-2 gap-2 sm:mt-0 sm:flex sm:w-auto sm:items-center sm:gap-8"
+        class="mt-4 hidden w-full flex-col gap-3 md:mt-0 md:flex md:w-auto md:flex-row md:items-center md:gap-8"
       >
         <li class="col-span-2">
           <a
@@ -201,7 +199,9 @@ const isActive = (path: string) => {
       menuBtn.setAttribute("aria-label", openMenu ? openLabel : closeLabel);
 
       menuItems.classList.toggle("hidden");
-      menuItems.classList.toggle("grid");
+      if (window.innerWidth < 768) {
+  menuItems.classList.toggle("flex");
+}
 
       menuIcon.classList.toggle("hidden");
       closeIcon.classList.toggle("hidden");
