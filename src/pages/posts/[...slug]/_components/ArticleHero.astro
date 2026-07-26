@@ -1,0 +1,96 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import Datetime from "@/components/Datetime.astro";
+import Tag from "@/components/Tag.astro";
+import { slugifyStr } from "@/utils/slugify";
+import { toTransitionName } from "@/utils/toTransitionName";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+
+const {
+  title,
+  description,
+  pubDatetime,
+  modDatetime,
+  timezone,
+  tags,
+} = post.data;
+
+const readingTime = Math.max(
+  1,
+  Math.ceil((post.body?.split(/\s+/).length ?? 0) / 200)
+);
+---
+
+<section class="mx-auto max-w-5xl">
+
+  <div class="mb-6">
+
+    <span class="inline-flex rounded-full border border-accent/20 bg-accent/10 px-4 py-1 text-sm font-semibold text-accent">
+      Article
+    </span>
+
+  </div>
+
+  <h1
+    style={{ viewTransitionName: toTransitionName(title) }}
+    class="text-4xl font-black leading-tight tracking-tight md:text-6xl"
+  >
+    {title}
+  </h1>
+
+  {
+    description && (
+      <p class="mt-8 max-w-3xl text-xl leading-9 text-muted">
+        {description}
+      </p>
+    )
+  }
+
+  <div class="mt-10 flex flex-wrap items-center gap-6 text-sm text-muted">
+
+    <div>
+      <span class="font-semibold text-foreground">Published</span>
+      <div class="mt-1">
+        <Datetime
+          {pubDatetime}
+          {modDatetime}
+          {timezone}
+          size="sm"
+        />
+      </div>
+    </div>
+
+    <div class="h-8 w-px bg-border"></div>
+
+    <div>
+      <span class="font-semibold text-foreground">Reading Time</span>
+      <div class="mt-1">
+        {readingTime} min read
+      </div>
+    </div>
+
+  </div>
+
+  {
+    tags.length > 0 && (
+      <div class="mt-10 flex flex-wrap gap-3">
+        {
+          tags.map(tag => (
+            <Tag
+              tag={slugifyStr(tag)}
+              tagName={tag}
+              size="sm"
+            />
+          ))
+        }
+      </div>
+    )
+  }
+
+</section>

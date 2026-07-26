@@ -1,0 +1,70 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+import Card from "@/components/Card";
+import getSortedPosts from "@/utils/getSortedPosts";
+
+interface Props {
+  currentPost: CollectionEntry<"posts">;
+}
+
+const { currentPost } = Astro.props;
+
+const allPosts = await getCollection("posts");
+
+const publishedPosts = getSortedPosts(allPosts).filter(
+  post => post.id !== currentPost.id
+);
+
+const currentTags = currentPost.data.tags ?? [];
+
+const related = publishedPosts
+  .map(post => {
+    const score = post.data.tags.filter(tag =>
+      currentTags.includes(tag)
+    ).length;
+
+    return {
+      post,
+      score,
+    };
+  })
+  .sort((a, b) => b.score - a.score);
+
+const relatedPosts = [
+  ...related.filter(r => r.score > 0).map(r => r.post),
+  ...publishedPosts.filter(
+    p => !related.some(r => r.post.id === p.id && r.score > 0)
+  ),
+].slice(0, 3);
+---
+
+{
+  relatedPosts.length > 0 && (
+    <section class="mt-20">
+
+      <div class="mb-8 flex items-center justify-between">
+
+        <div>
+
+          <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+            Continue Reading
+          </p>
+
+          <h2 class="mt-2 text-3xl font-black">
+            Related Articles
+          </h2>
+
+        </div>
+
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+
+        {relatedPosts.map(post => <Card href={post.data.url} frontmatter={post.data} />)}
+
+      </div>
+
+    </section>
+  )
+}
