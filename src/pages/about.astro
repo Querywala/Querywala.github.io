@@ -1,36 +1,43 @@
 ---
-import { getEntry, render } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
-import Breadcrumb from "@/components/Breadcrumb.astro";
-import Main from "@/components/Main.astro";
 import Footer from "@/components/Footer.astro";
-import config from "@/config";
-
-const about = await getEntry("pages", "about");
-
-if (!about) {
-  throw new Error(
-    "Missing content entry: `about.md` or `about.mdx` in `src/content/pages/`"
-  );
-}
-
-const { Content } = await render(about);
 ---
 
-<Layout
-  title={`${about.data.title} | ${config.site.title}`}
-  description={about.data.description}
-  ogImage={about.data.ogImage}
-  canonicalURL={about.data.canonicalURL}
->
+<Layout title="About Querywala">
   <Header />
 
-  <Breadcrumb />
+  <main class="app-layout py-12">
+    <h1 class="text-5xl font-bold">About Querywala</h1>
 
-  <Main pageTitle={about.data.title} class="app-prose">
-    <Content />
-  </Main>
+    <p class="mt-6 text-lg">
+      Welcome to <strong>Querywala</strong>—a place where data engineering,
+      analytics, and modern Microsoft technologies come together.
+    </p>
+
+    <p class="mt-4">
+      Querywala focuses on practical, real-world content covering Microsoft
+      Fabric, Azure, SQL, Power BI, Artificial Intelligence, and Data
+      Engineering.
+    </p>
+
+    <h2 class="mt-10 text-3xl font-semibold">What You'll Find Here</h2>
+
+    <ul class="mt-4 list-disc pl-6 space-y-2">
+      <li>Microsoft Fabric tutorials</li>
+      <li>Azure architecture guides</li>
+      <li>SQL optimization techniques</li>
+      <li>Power BI best practices</li>
+      <li>AI and analytics</li>
+      <li>Real-world project experiences</li>
+    </ul>
+
+    <h2 class="mt-10 text-3xl font-semibold">Mission</h2>
+
+    <p class="mt-4">
+      Turning data into insights, one query at a time.
+    </p>
+  </main>
 
   <Footer />
 </Layout>
