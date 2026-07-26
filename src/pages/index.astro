@@ -56,16 +56,7 @@ const homePath = getRelativeLocaleUrl(locale, "");
 
       <h1 class="text-6xl font-black leading-tight tracking-tight">
 
-        Turning data
-        <br />
-
-        into insights,
-
-        <span class="text-accent">
-          one query
-        </span>
-
-        at a time.
+        Turning data into insights, one query at a time.
 
       </h1>
 
@@ -266,17 +257,16 @@ const homePath = getRelativeLocaleUrl(locale, "");
 <script>
 document.addEventListener("astro:page-load", () => {
 
-  const indexLayout =
-    document.querySelector("#main-content")?.dataset;
+  const indexLayout = document.querySelector("#main-content") as HTMLElement | null;
 
   const baseRoot =
     import.meta.env.BASE_URL.replace(/\/?$/, "/");
 
-  if (indexLayout?.layout) {
+  if (indexLayout?.dataset.layout) {
 
     sessionStorage.setItem(
       "backUrl",
-      indexLayout.homePath ?? baseRoot
+      indexLayout.dataset.homePath ?? baseRoot
     );
 
   }
