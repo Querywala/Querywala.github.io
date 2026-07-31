@@ -45,26 +45,26 @@ Hopefully, these lessons will save you a few hours—or even days—of troublesh
 Our implementation followed a Medallion Architecture.
 
 ```text
-                    Source Systems
-         (Magento • ERP • APIs • Files)
+                Source Systems
+
                       │
                       ▼
               Fabric Pipelines
                       │
                       ▼
-          Bronze Lakehouse (Raw)
+            Bronze Lakehouse (Raw)
                       │
                       ▼
-        Fabric Notebooks (PySpark)
+            Fabric Notebooks (PySpark)
                       │
                       ▼
-      Silver Lakehouse (Standardized)
+        Silver Lakehouse (Standardized)
                       │
                       ▼
-      Fabric Data Warehouse (Gold)
+        Fabric Data Warehouse (Gold)
                       │
                       ▼
-       Power BI Semantic Models
+        Power BI Semantic Models
                       │
                       ▼
           Business Dashboards
@@ -84,7 +84,7 @@ SqlDecimal cannot be converted to Double
 
 ## Why it happened
 
-Magento stores prices and financial values using high-precision decimal data types such as `DECIMAL(38,18)`.
+Financial values using high-precision decimal data types such as `DECIMAL(38,18)`.
 
 During ingestion, Fabric attempted to convert these values into floating-point numbers, resulting in conversion failures.
 
@@ -175,7 +175,7 @@ mssparkutils.fs.ls(path)
 
 # Issue 4 — Large Text Columns Failed
 
-Some Magento tables contained very large text values such as:
+Some tables contained very large text values such as:
 
 - Product descriptions
 - JSON payloads
@@ -251,7 +251,7 @@ Files/your-folder/your-file
 
 # Issue 7 — Schema Drift Broke the Pipeline
 
-As Magento evolved, new columns appeared without warning.
+As Data source evolved, new columns appeared without warning.
 
 Because the pipeline expected a fixed schema, notebooks and merge operations started failing.
 
