@@ -46,10 +46,9 @@ Our implementation followed a Medallion Architecture.
 
 ```text
                 Source Systems
-
                       │
                       ▼
-              Fabric Pipelines
+                Fabric Pipelines
                       │
                       ▼
             Bronze Lakehouse (Raw)
@@ -269,13 +268,13 @@ Compare source and destination columns dynamically and process only the columns 
 
 After implementing Microsoft Fabric in production, these practices have become standard in every pipeline I build.
 
-- ✅ Define datatypes explicitly.
-- ✅ Avoid automatic schema assumptions.
-- ✅ Never use `UPDATE SET *` in production.
-- ✅ Handle large text columns early.
-- ✅ Deduplicate incremental data.
-- ✅ Log pipeline and notebook failures.
-- ✅ Design pipelines that can tolerate schema changes.
+- Define datatypes explicitly.
+- Avoid automatic schema assumptions.
+- Never use `UPDATE SET *` in production.
+- Handle large text columns early.
+- Deduplicate incremental data.
+- Log pipeline and notebook failures.
+- Design pipelines that can tolerate schema changes.
 
 ---
 
@@ -301,4 +300,4 @@ If you've encountered production challenges or discovered useful solutions, feel
 
 Happy learning!
 
-**— Querywala**
+**Querywala**
