@@ -15,10 +15,10 @@ const { posts } = Astro.props;
 const locale = Astro.currentLocale ?? config.site.lang;
 ---
 
-<section class="mx-auto max-w-6xl border-t border-border px-6 py-24">
+<section class="mx-auto max-w-7xl border-t border-border px-6 py-24">
 
-  <!-- Section Header -->
-  <div class="mb-16 flex items-center justify-between">
+  <!-- Header -->
+  <div class="mb-12 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
 
     <div>
       <p class="text-sm font-semibold uppercase tracking-[0.25em] text-accent">
@@ -33,14 +33,12 @@ const locale = Astro.currentLocale ?? config.site.lang;
 
   </div>
 
-  <!-- Articles -->
-  <ul class="grid grid-cols-1 gap-10 lg:grid-cols-2">
+  <!-- Cards -->
+  <ul class="grid grid-cols-1 gap-8 md:grid-cols-2">
 
     {
       posts.map(post => (
-        <li class="h-full">
-          <Card {...post} variant="h3" />
-        </li>
+        <Card {...post} variant="h3" />
       ))
     }
 
