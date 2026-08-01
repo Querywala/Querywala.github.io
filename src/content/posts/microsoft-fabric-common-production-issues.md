@@ -44,7 +44,7 @@ Hopefully, these lessons will save you a few hours—or even days—of troublesh
 
 Our implementation followed a Medallion Architecture.
 
-```text
+```plaintext
                 Source Systems
                       │
                       ▼
@@ -77,7 +77,7 @@ Although the architecture is simple and scalable, production data quickly expose
 
 ## Error
 
-```text
+```plaintext
 SqlDecimal cannot be converted to Double
 ```
 
@@ -116,7 +116,7 @@ df = df.withColumn(
 
 ## Error
 
-```text
+```plaintext
 Cannot resolve row_updated_at in UPDATE clause
 ```
 
@@ -146,7 +146,7 @@ Generate merge statements dynamically and update only the columns that exist in 
 
 ## Error
 
-```text
+```plaintext
 NameError: dbutils is not defined
 ```
 
@@ -238,7 +238,7 @@ The issue turned out to be an incorrect path.
 
 Use the Fabric Lakehouse path.
 
-```text
+```plaintext
 Files/your-folder/your-file
 ```
 

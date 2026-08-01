@@ -362,3 +362,49 @@
   }
 
 }
+/* Override Shiki for plain text (```text) code blocks */
+.astro-code[data-language="text"] {
+  --shiki-dark-bg: transparent !important;
+  --shiki-light-bg: transparent !important;
+  --shiki-dark: var(--color-foreground) !important;
+  --shiki-light: var(--color-foreground) !important;
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.astro-code[data-language="text"] code {
+  background: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  padding: 0 !important;
+  font-family: inherit !important;
+}
+
+.astro-code[data-language="text"] .line {
+  padding: 0 !important;
+}
+/* Architecture diagram */
+.architecture {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.architecture pre {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+
+  font-family: "Google Sans Code", monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+
+  color: var(--color-foreground);
+
+  white-space: pre;
+}
