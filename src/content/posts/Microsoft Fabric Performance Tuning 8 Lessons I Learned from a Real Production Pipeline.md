@@ -277,7 +277,7 @@ Small improvements made regularly are much easier than solving a major performan
 
 ---
 
-# My Performance Checklist
+## My Performance Checklist
 
 Whenever I build a new Fabric pipeline, I ask myself these questions.
 
