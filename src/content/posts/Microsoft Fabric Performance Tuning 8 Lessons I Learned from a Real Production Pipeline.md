@@ -3,7 +3,7 @@ title: "Microsoft Fabric Performance Tuning: 8 Lessons I Learned from a Real Pro
 description: "Practical Microsoft Fabric performance tips based on a real-world implementation. Learn how incremental loading, better merge logic, partitioning, and simpler transformations helped improve pipeline performance."
 pubDatetime: 2026-08-01T09:00:00Z
 featured: false
-draft: false
+draft: true
 
 tags:
   - Microsoft Fabric
@@ -15,9 +15,9 @@ tags:
   - Azure
 ---
 
-![Microsoft Fabric Performance Tuning](/assets/images/posts/fabric-performance-tuning-banner.png)
-
 # Microsoft Fabric Performance Tuning: 8 Lessons I Learned from a Real Production Pipeline
+
+![Microsoft Fabric Performance Tuning](/assets/images/posts/fabric-performance-tuning-banner.png)
 
 > **Simple changes that made a big difference while building production data pipelines in Microsoft Fabric.**
 

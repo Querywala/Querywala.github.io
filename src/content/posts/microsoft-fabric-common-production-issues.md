@@ -3,7 +3,7 @@ title: "Microsoft Fabric: Common Production Issues and How I Solved Them"
 description: "Real-world lessons from building enterprise Microsoft Fabric data pipelines, including common production issues, practical fixes, and best practices."
 pubDatetime: 2026-07-31T09:00:00Z
 featured: false
-draft: false
+draft: true
 
 tags:
   - Microsoft Fabric
@@ -18,9 +18,9 @@ tags:
 heroImage: "/assets/images/posts/fabric-production-guide-banner.png"
 ---
 
-![Microsoft Fabric Production Guide](/assets/images/posts/fabric-production-guide-banner.png)
-
 # Microsoft Fabric: Common Production Issues and How I Solved Them
+
+![Microsoft Fabric Production Guide](/assets/images/posts/fabric-production-guide-banner.png)
 
 > **Lessons learned while building enterprise Microsoft Fabric data pipelines using Magento, Lakehouse, Notebooks, Data Warehouse, and Power BI.**
 
