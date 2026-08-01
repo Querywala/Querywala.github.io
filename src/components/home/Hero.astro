@@ -17,32 +17,28 @@ const technologies = [
 ];
 ---
 
-<section class="mx-auto max-w-7xl px-6 py-16">
-
+<section class="mx-auto max-w-7xl px-6 py-8">
   <div class="grid gap-16 lg:grid-cols-[1.4fr_0.8fr] lg:items-center">
 
-    <!-- Left Content -->
-
+    <!-- Left -->
     <div>
-
-      <p class="mb-5 text-sm font-semibold uppercase tracking-[0.3em] text-accent">
-        Microsoft Fabric • Azure • SQL • Power BI • AI
+      <p class="mb-6 text-sm font-semibold uppercase tracking-[0.25em] text-accent">
+        Data Engineering • Data Analytics • Cloud • AI
       </p>
 
-      <h1 class="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-        Turning data into insights,
-        <br />
-        one query at a time.
-      </h1>
+      <h3 class="max-w-4xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
+        Turning data into insights, one query at a time.
+      </h3>
 
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-muted">
-        Querywala is where I share practical tutorials, architecture guides,
-        troubleshooting tips, and real-world solutions for Microsoft Fabric,
-        Azure, SQL, Power BI, AI, and modern Data Engineering.
+      <p class="mt-8 max-w-2xl text-xl leading-9 text-muted">
+        Querywala is a technical publication focused on
+        Microsoft Fabric, Azure, SQL, Power BI, AI and
+        Enterprise Data Engineering.
+        Every article is based on practical implementation,
+        architecture patterns and production experience.
       </p>
 
-      <div class="mt-8 flex flex-wrap gap-4">
-
+      <div class="mt-10 flex flex-wrap gap-4">
         <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
           Read Articles
         </LinkButton>
@@ -53,90 +49,76 @@ const technologies = [
         >
           About Me
         </LinkButton>
-
       </div>
 
       {
         socials.length > 0 && (
-          <div class="mt-8">
+          <div class="mt-10">
             <Socials />
           </div>
         )
       }
-
     </div>
 
-    <!-- Right Panel -->
+    <!-- Right -->
+    <div class="rounded-3xl border border-border bg-surface p-8">
 
-    <div class="rounded-3xl border border-border bg-surface/60 p-8 backdrop-blur">
-
-      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
         Technologies
       </p>
 
-      <h2 class="mt-3 text-2xl font-bold text-foreground">
-        What you'll find here
-      </h2>
-
-      <p class="mt-3 leading-7 text-muted">
-        Practical articles, implementation guides, performance tuning,
-        production troubleshooting, and best practices based on real
-        enterprise projects.
-      </p>
-
-      <div class="mt-8 flex flex-wrap gap-3">
-
+      <div class="mt-6 flex flex-wrap gap-3">
         {
           technologies.map((tech) => (
             <span
-              class="rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-sm font-medium text-accent transition-all duration-200 hover:bg-accent hover:text-white"
+              class="rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-sm font-medium text-accent"
             >
               {tech}
             </span>
           ))
         }
-
       </div>
 
-      <div class="mt-10 grid gap-4">
+      <!--
+      <div class="mt-10 space-y-6">
 
         <div class="rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-foreground">
-            Production Ready
-          </h3>
+          <p class="text-sm font-semibold text-foreground">
+            Production-ready Guides
+          </p>
 
-          <p class="mt-2 text-sm leading-6 text-muted">
-            Learn from real-world Microsoft Fabric implementations,
-            not just sample projects.
+          <p class="mt-2 text-sm text-muted">
+            Step-by-step tutorials built from real-world
+            enterprise implementations.
           </p>
         </div>
 
         <div class="rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-foreground">
+          <p class="text-sm font-semibold text-foreground">
             Architecture & Best Practices
-          </h3>
+          </p>
 
-          <p class="mt-2 text-sm leading-6 text-muted">
-            Design scalable data platforms using proven architecture
-            patterns and engineering practices.
+          <p class="mt-2 text-sm text-muted">
+            Design patterns, governance, performance tuning,
+            and implementation guidance.
           </p>
         </div>
 
         <div class="rounded-xl border border-border p-5">
-          <h3 class="font-semibold text-foreground">
-            Performance & Troubleshooting
-          </h3>
+          <p class="text-sm font-semibold text-foreground">
+            Microsoft Fabric Focus
+          </p>
 
-          <p class="mt-2 text-sm leading-6 text-muted">
-            Discover practical fixes for common issues, performance
-            bottlenecks, and production challenges.
+          <p class="mt-2 text-sm text-muted">
+            Lakehouse, Data Warehouse, OneLake,
+            Spark, Power BI and the complete Fabric ecosystem.
           </p>
         </div>
 
       </div>
+      -->
 
     </div>
 
   </div>
-
 </section>
