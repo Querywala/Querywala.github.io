@@ -18,20 +18,17 @@ const technologies = [
 ---
 
 <section class="mx-auto max-w-7xl px-6 py-8">
-
   <div class="grid gap-16 lg:grid-cols-[1.4fr_0.8fr] lg:items-center">
 
     <!-- Left -->
-
     <div>
-
       <p class="mb-6 text-sm font-semibold uppercase tracking-[0.25em] text-accent">
         Data Engineering • Data Analytics • Cloud • AI
       </p>
 
       <h3 class="max-w-4xl text-4xl font-black leading-tight tracking-tight md:text-6xl">
-  Turning data into insights, one query at a time.
-</h3>
+        Turning data into insights, one query at a time.
+      </h3>
 
       <p class="mt-8 max-w-2xl text-xl leading-9 text-muted">
         Querywala is a technical publication focused on
@@ -42,7 +39,6 @@ const technologies = [
       </p>
 
       <div class="mt-10 flex flex-wrap gap-4">
-
         <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
           Read Articles
         </LinkButton>
@@ -53,7 +49,6 @@ const technologies = [
         >
           About Me
         </LinkButton>
-
       </div>
 
       {
@@ -63,11 +58,9 @@ const technologies = [
           </div>
         )
       }
-
     </div>
 
     <!-- Right -->
-
     <div class="rounded-3xl border border-border bg-surface p-8">
 
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
@@ -75,7 +68,6 @@ const technologies = [
       </p>
 
       <div class="mt-6 flex flex-wrap gap-3">
-
         {
           technologies.map((tech) => (
             <span
@@ -85,9 +77,9 @@ const technologies = [
             </span>
           ))
         }
-
       </div>
-<!--
+
+      <!--
       <div class="mt-10 space-y-6">
 
         <div class="rounded-xl border border-border p-5">
@@ -124,9 +116,9 @@ const technologies = [
         </div>
 
       </div>
+      -->
 
     </div>
 
   </div>
--->
 </section>
