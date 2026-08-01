@@ -44,7 +44,9 @@ Hopefully, these lessons will save you a few hours—or even days—of troublesh
 
 Our implementation followed a Medallion Architecture.
 
-```plaintext
+<div class="architecture">
+
+<pre>
                 Source Systems
                       │
                       ▼
@@ -67,7 +69,9 @@ Our implementation followed a Medallion Architecture.
                       │
                       ▼
           Business Dashboards
-```
+</pre>
+
+</div>
 
 Although the architecture is simple and scalable, production data quickly exposed challenges that never appeared in development.
 
