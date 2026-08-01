@@ -216,22 +216,14 @@
     }
 
     .astro-code {
+  border-radius: 18px;
 
-      border-radius: 18px;
+  background: var(--shiki-light-bg) !important;
+  color: var(--shiki-light) !important;
 
-      background: var(--shiki-light-bg);
-
-      color: var(--shiki-light);
-
-    }
-
-    html[data-theme="dark"] .astro-code {
-
-      background: var(--shiki-dark-bg);
-
-      color: var(--shiki-dark);
-
-    }
+  --shiki-dark-bg: var(--shiki-light-bg) !important;
+  --shiki-dark: var(--shiki-light) !important;
+}
 
     .astro-code code {
 

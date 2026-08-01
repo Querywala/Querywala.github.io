@@ -40,44 +40,15 @@ Hopefully, these lessons will save you a few hours—or even days—of troublesh
 
 ---
 
-# Production Architecture
+## Production Architecture
 
 Our implementation followed a Medallion Architecture.
-
-<div class="architecture">
-
-<pre>
-                Source Systems
-                      │
-                      ▼
-                Fabric Pipelines
-                      │
-                      ▼
-            Bronze Lakehouse (Raw)
-                      │
-                      ▼
-            Fabric Notebooks (PySpark)
-                      │
-                      ▼
-        Silver Lakehouse (Standardized)
-                      │
-                      ▼
-        Fabric Data Warehouse (Gold)
-                      │
-                      ▼
-        Power BI Semantic Models
-                      │
-                      ▼
-          Business Dashboards
-</pre>
-
-</div>
 
 Although the architecture is simple and scalable, production data quickly exposed challenges that never appeared in development.
 
 ---
 
-# Issue 1: Decimal Conversion Errors
+## Issue 1: Decimal Conversion Errors
 
 ## Error
 
@@ -116,7 +87,7 @@ df = df.withColumn(
 
 ---
 
-# Issue 2: Delta Merge Failed
+## Issue 2: Delta Merge Failed
 
 ## Error
 
@@ -146,7 +117,7 @@ Generate merge statements dynamically and update only the columns that exist in 
 
 ---
 
-# Issue 3: Databricks Code Didn't Work
+## Issue 3: Databricks Code Didn't Work
 
 ## Error
 
@@ -176,7 +147,7 @@ mssparkutils.fs.ls(path)
 
 ---
 
-# Issue 4: Large Text Columns Failed
+## Issue 4: Large Text Columns Failed
 
 Some tables contained very large text values such as:
 
@@ -204,7 +175,7 @@ df = df.withColumn(
 
 ---
 
-# Issue 5: Duplicate Records During Incremental Loads
+## Issue 5: Duplicate Records During Incremental Loads
 
 Incremental pipelines often loaded multiple versions of the same business record because source systems update existing rows.
 
@@ -232,7 +203,7 @@ df = (
 
 ---
 
-# Issue 6: Lookup Activity Couldn't Read Lakehouse Files
+## Issue 6: Lookup Activity Couldn't Read Lakehouse Files
 
 The Lookup activity failed even though the files existed in the Lakehouse.
 
@@ -252,7 +223,7 @@ Files/your-folder/your-file
 
 ---
 
-# Issue 7: Schema Drift Broke the Pipeline
+## Issue 7: Schema Drift Broke the Pipeline
 
 As Data source evolved, new columns appeared without warning.
 
@@ -268,7 +239,7 @@ Compare source and destination columns dynamically and process only the columns 
 
 ---
 
-# Best Practices I Now Follow
+## Best Practices I Now Follow
 
 After implementing Microsoft Fabric in production, these practices have become standard in every pipeline I build.
 
@@ -282,7 +253,7 @@ After implementing Microsoft Fabric in production, these practices have become s
 
 ---
 
-# Final Thoughts
+## Final Thoughts
 
 Microsoft Fabric is a powerful platform that simplifies modern data engineering by bringing together pipelines, notebooks, Lakehouse, Data Warehouse, and Power BI into a single ecosystem.
 
