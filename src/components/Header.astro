@@ -4,7 +4,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 
 import IconUnderline from "@/assets/icons/IconUnderline.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
-import IconArchive from "@/assets/icons/IconArchive.svg";
+// import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconSearch from "@/assets/icons/IconSearch.svg";
 import IconMoon from "@/assets/icons/IconMoon.svg";
@@ -97,6 +97,7 @@ const isActive = (path: string) => {
         About
       </a>
 
+      {/*
       {
         features.showArchives && (
           <LinkButton
@@ -113,6 +114,7 @@ const isActive = (path: string) => {
           </LinkButton>
         )
       }
+      */}
 
       {
         features.search !== false && (
@@ -130,7 +132,8 @@ const isActive = (path: string) => {
           </LinkButton>
         )
       }
-            {
+
+      {
         features.lightAndDarkMode && (
           <button
             id="theme-btn"
@@ -208,6 +211,7 @@ const isActive = (path: string) => {
         About
       </a>
 
+      {/*
       {
         features.showArchives && (
           <a
@@ -218,6 +222,7 @@ const isActive = (path: string) => {
           </a>
         )
       }
+      */}
 
       {
         features.search !== false && (
