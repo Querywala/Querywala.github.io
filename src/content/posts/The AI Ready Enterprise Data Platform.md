@@ -1,8 +1,10 @@
 ---
 title: "The AI-Ready Enterprise Data Platform: What You Need Before Building AI"
 description: "AI initiatives do not start with models. They start with trusted, accessible, governed, and well-architected enterprise data. This guide explains what organizations need to build an AI-ready data platform."
-pubDate: 2026-08-18
-author: "Abhishek Gautam"
+pubDatetime: 2026-08-19T09:00:00Z
+featured: false
+draft: false
+
 tags:
   - AI
   - Data Architecture
