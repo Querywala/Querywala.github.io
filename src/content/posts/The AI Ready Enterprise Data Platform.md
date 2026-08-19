@@ -1,7 +1,7 @@
 ---
 title: "The AI-Ready Enterprise Data Platform: What You Need Before Building AI"
 description: "AI initiatives do not start with models. They start with trusted, accessible, governed, and well-architected enterprise data. This guide explains what organizations need to build an AI-ready data platform."
-pubDatetime: 2026-08-19T09:00:00Z
+pubDatetime: 2026-08-19T05:00:00Z
 featured: false
 draft: false
 
@@ -15,7 +15,7 @@ tags:
   - Analytics
 ---
 
-![What Is Microsoft Fabric](/assets/images/posts/The-AI-Ready-Enterprise-Data-Platform.png)
+![The AI-Ready Enterprise Data Platform](/assets/images/posts/The-AI-Ready-Enterprise-Data-Platform.png)
 
 ## Introduction
 
