@@ -834,63 +834,63 @@ Before starting an enterprise AI project, ask:
 
 ### Business
 
-- [ ] Is there a clearly defined business problem?
-- [ ] Is the expected business outcome measurable?
-- [ ] Is the AI use case actually appropriate?
+[ ] Is there a clearly defined business problem?
+[ ] Is the expected business outcome measurable?
+[ ] Is the AI use case actually appropriate?
 
 ### Data
 
-- [ ] Have all required data sources been identified?
-- [ ] Is the authoritative source known?
-- [ ] Are canonical entities available?
-- [ ] Is sufficient historical data available?
-- [ ] Is the data fresh enough?
+[ ] Have all required data sources been identified?
+[ ] Is the authoritative source known?
+[ ] Are canonical entities available?
+[ ] Is sufficient historical data available?
+[ ] Is the data fresh enough?
 
 ### Data Engineering
 
-- [ ] Are pipelines reliable?
-- [ ] Is incremental loading implemented where appropriate?
-- [ ] Are retries and error handling implemented?
-- [ ] Is monitoring available?
-- [ ] Is schema drift handled?
+[ ] Are pipelines reliable?
+[ ] Is incremental loading implemented where appropriate?
+[ ] Are retries and error handling implemented?
+[ ] Is monitoring available?
+[ ] Is schema drift handled?
 
 ### Data Quality
 
-- [ ] Are quality rules defined?
-- [ ] Are quality issues measurable?
-- [ ] Are critical datasets monitored?
-- [ ] Are quality thresholds defined?
+[ ] Are quality rules defined?
+[ ] Are quality issues measurable?
+[ ] Are critical datasets monitored?
+[ ] Are quality thresholds defined?
 
 ### Governance
 
-- [ ] Is there a data owner?
-- [ ] Is there a data steward?
-- [ ] Are business definitions documented?
-- [ ] Is lineage available?
-- [ ] Is sensitive data classified?
+[ ] Is there a data owner?
+[ ] Is there a data steward?
+[ ] Are business definitions documented?
+[ ] Is lineage available?
+[ ] Is sensitive data classified?
 
 ### Security
 
-- [ ] Is identity integrated?
-- [ ] Are permissions enforced?
-- [ ] Is row/column-level access required?
-- [ ] Is PII protected?
-- [ ] Are AI actions auditable?
+[ ] Is identity integrated?
+[ ] Are permissions enforced?
+[ ] Is row/column-level access required?
+[ ] Is PII protected?
+[ ] Are AI actions auditable?
 
 ### Semantic Layer
 
-- [ ] Are business metrics defined?
-- [ ] Are calculations standardized?
-- [ ] Are synonyms available?
-- [ ] Can AI understand business context?
+[ ] Are business metrics defined?
+[ ] Are calculations standardized?
+[ ] Are synonyms available?
+[ ] Can AI understand business context?
 
 ### AI
 
-- [ ] Is the appropriate AI pattern selected?
-- [ ] Is RAG actually required?
-- [ ] Is structured querying required?
-- [ ] Does the AI need to take actions?
-- [ ] Is human approval required?
+[ ] Is the appropriate AI pattern selected?
+[ ] Is RAG actually required?
+[ ] Is structured querying required?
+[ ] Does the AI need to take actions?
+[ ] Is human approval required?
 
 If many answers are "No", the organization may have an **AI ambition problem disguised as an AI technology problem**.
 
