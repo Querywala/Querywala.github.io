@@ -13,7 +13,7 @@ tags:
   - Data Platform
 ---
 
-![Microsoft Fabric Capacity: What Nobody Tells You Before You Buy](/assets/images/posts/Microsoft Fabric Lakehouse Architecture Overview.png)
+![Microsoft Fabric Capacity: What Nobody Tells You Before You Buy](/assets/images/posts/Microsoft-Fabric-Lakehouse-Architecture-Overview.png)
 
 ## Introduction
 
