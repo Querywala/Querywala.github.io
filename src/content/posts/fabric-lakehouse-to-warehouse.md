@@ -51,7 +51,7 @@ Instead, think of it as **separating data engineering from governed data consump
 
 ---
 
-# 1. First, Understand What Each Layer Is Supposed to Do
+## 1. First, Understand What Each Layer Is Supposed to Do
 
 Before deciding whether the architecture is redundant, it helps to understand the responsibility of each layer.
 
@@ -93,7 +93,7 @@ Each layer has a different job.
 
 ---
 
-# 2. Bronze Lakehouse: Preserve the Source
+## 2. Bronze Lakehouse: Preserve the Source
 
 The Bronze layer is primarily about **ingestion and preservation**.
 
@@ -128,7 +128,7 @@ Its primary responsibility is:
 
 ---
 
-# 3. Silver Lakehouse: Create Canonical Data
+## 3. Silver Lakehouse: Create Canonical Data
 
 The Silver layer is where data starts becoming consistent and reusable.
 
@@ -169,7 +169,7 @@ It is the **enterprise data foundation** from which multiple downstream use case
 
 ---
 
-# 4. Gold Lakehouse: Curated Analytical Data
+## 4. Gold Lakehouse: Curated Analytical Data
 
 Gold is where data becomes much closer to business consumption.
 
@@ -203,7 +203,7 @@ This is where the distinction between **data foundation** and **consumption laye
 
 ---
 
-# 5. Gold Lakehouse and Data Warehouse Do Not Have to Mean the Same Thing
+## 5. Gold Lakehouse and Data Warehouse Do Not Have to Mean the Same Thing
 
 The biggest misconception is that Gold Lakehouse and Data Warehouse must have exactly the same responsibility.
 
@@ -227,11 +227,11 @@ The distinction becomes especially useful in larger organizations.
 
 ---
 
-# 6. Why Keep Gold in the Lakehouse?
+## 6. Why Keep Gold in the Lakehouse?
 
 There are several good reasons to keep a Gold layer in the Lakehouse even if a Warehouse exists downstream.
 
-## 6.1 Gold Can Serve More Than BI
+### 6.1 Gold Can Serve More Than BI
 
 Not every consumer of enterprise data is Power BI.
 
@@ -253,7 +253,7 @@ A Gold Lakehouse provides a flexible analytical foundation.
 
 ---
 
-## 6.2 Delta-Based Storage Is Highly Reusable
+### 6.2 Delta-Based Storage Is Highly Reusable
 
 Lakehouse architectures provide an open and flexible storage layer.
 
@@ -278,7 +278,7 @@ The important architectural principle is:
 
 ---
 
-## 6.3 Engineering and Consumption Have Different Lifecycles
+### 6.3 Engineering and Consumption Have Different Lifecycles
 
 Data engineering teams frequently change:
 
@@ -323,13 +323,13 @@ Business Users
 
 ---
 
-# 7. So What Does the Data Warehouse Add?
+## 7. So What Does the Data Warehouse Add?
 
 The Fabric Data Warehouse can provide a controlled SQL-oriented layer between engineering and reporting.
 
 This can be valuable when the organization has a strong enterprise BI and reporting requirement.
 
-## 7.1 SQL-First Consumption
+### 7.1 SQL-First Consumption
 
 Many organizations have a large population of:
 
@@ -363,7 +363,7 @@ the organization can provide a controlled SQL interface.
 
 ---
 
-# 8. The Warehouse Can Become the Enterprise Reporting Contract
+## 8. The Warehouse Can Become the Enterprise Reporting Contract
 
 One of the strongest reasons for introducing a Warehouse is **stability**.
 
@@ -403,7 +403,7 @@ The Warehouse therefore acts as a **contract between data engineering and busine
 
 ---
 
-# 9. Is This Data Duplication?
+## 9. Is This Data Duplication?
 
 Technically, it can be.
 
@@ -447,7 +447,7 @@ That is a much better architecture question.
 
 ---
 
-# 10. When This Architecture Makes Sense
+## 10. When This Architecture Makes Sense
 
 The Lakehouse → Warehouse pattern becomes particularly useful when several of the following are true.
 
@@ -524,7 +524,7 @@ A Warehouse can provide a natural home for the SQL-oriented reporting representa
 
 ---
 
-# 11. When You Probably Don't Need the Warehouse
+## 11. When You Probably Don't Need the Warehouse
 
 This architecture should **not** become a mandatory Fabric blueprint.
 
@@ -559,7 +559,7 @@ may be perfectly reasonable.
 
 ---
 
-# 12. A Practical Decision Framework
+## 12. A Practical Decision Framework
 
 Instead of asking:
 
@@ -582,7 +582,7 @@ The answer should come from the **workload**, not from a desire to reproduce a t
 
 ---
 
-# 13. A Better Enterprise Mental Model
+## 13. A Better Enterprise Mental Model
 
 One of the easiest ways to understand this architecture is to stop thinking about it as five copies of the same data.
 
@@ -622,7 +622,7 @@ That is a much more useful mental model.
 
 ---
 
-# 14. The Biggest Mistake: Adding Layers Without Purpose
+## 14. The Biggest Mistake: Adding Layers Without Purpose
 
 There is a danger in every modern data architecture:
 
@@ -664,7 +664,7 @@ It is the one where **each layer has a clear responsibility**.
 
 ---
 
-# 15. My Recommended Pattern for Enterprise Fabric
+## 15. My Recommended Pattern for Enterprise Fabric
 
 For organizations with significant data engineering, analytics, and BI requirements, a strong pattern can be:
 
@@ -721,7 +721,7 @@ They can contain similar business concepts without having identical responsibili
 
 ---
 
-# 16. What About Power BI?
+## 16. What About Power BI?
 
 Power BI should generally consume a **well-defined semantic model**, rather than forcing every report developer to independently interpret raw or engineering-oriented structures.
 
@@ -779,7 +779,7 @@ Responsible for:
 
 ---
 
-# 17. The Architecture Should Evolve With the Organization
+## 17. The Architecture Should Evolve With the Organization
 
 Not every organization needs this architecture on day one.
 
@@ -829,7 +829,7 @@ This is important because **Fabric should allow architecture to evolve rather th
 
 ---
 
-# 18. Final Takeaway
+## 18. Final Takeaway
 
 So, is putting a Fabric Data Warehouse on top of a Gold Lakehouse redundant?
 
