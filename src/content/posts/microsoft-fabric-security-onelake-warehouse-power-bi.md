@@ -2,7 +2,7 @@
 title: "Microsoft Fabric Security: Who Protects Your Data - OneLake, Warehouse, or Power BI?"
 description: "A practical enterprise guide to choosing the right Microsoft Fabric security controls across OneLake, Fabric Warehouse, semantic models, and Power BI."
 slug: "microsoft-fabric-security-onelake-warehouse-power-bi-rls"
-pubDatetime: 2026-09-01T07:00:00Z
+pubDatetime: 2026-10-11T07:00:00Z
 featured: false
 draft: false
 tags:
