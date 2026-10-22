@@ -14,7 +14,7 @@ tags:
   - Data Analytics
 ---
 
-![Microsoft Fabric Capacity: What Nobody Tells You Before You Buy](/assets/images/posts/Microsoft-Fabric-Governance.png)
+![Microsoft Fabric Governance: Freedom for Business, Control for IT](/assets/images/posts/Microsoft-Fabric-Governance.png)
 
 
 ## Introduction
