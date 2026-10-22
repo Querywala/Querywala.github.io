@@ -6,12 +6,14 @@ featured: false
 draft: false
 tags:
   - Microsoft Fabric
-  - Fabric Capacity
-  - Data Analytics
-  - Data Engineering
-  - Power BI
+  - Data Governance
   - Data Platform
+  - Data Strategy
+  - Data Architecture
+  - Data Engineering
+  - Data Analytics
 ---
+
 ![Microsoft Fabric Capacity: What Nobody Tells You Before You Buy](/assets/images/posts/Microsoft-Fabric-Governance.png)
 
 
